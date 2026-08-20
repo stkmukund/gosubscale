@@ -3,10 +3,13 @@ import { cn } from '@/lib/utils'
 export function SubScaleLogo({
   className,
   tone = 'dark',
+   variant = 'header'
 }: {
   className?: string
-  tone?: 'dark' | 'light'
+  tone?: 'dark' | 'light',
+   variant?: 'header' | 'footer'
 }) {
+    const logoSrc = variant === 'footer' ? '/images/footer-logo.png': '/images/logo.png'
   return (
     <span
       className={cn(
@@ -15,7 +18,7 @@ export function SubScaleLogo({
         className,
       )}
     >
-      <svg viewBox="0 0 24 24" className="size-6 text-brand" fill="none" aria-hidden="true">
+      {/* <svg viewBox="0 0 24 24" className="size-6 text-brand" fill="none" aria-hidden="true">
         <path
           d="M4 15L11 8l4 4 6-8"
           stroke="currentColor"
@@ -24,9 +27,9 @@ export function SubScaleLogo({
           strokeLinejoin="round"
         />
         <path d="M15 4h6v6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      </svg> */}
         <img
-              src="/images/logo.png"
+              src={logoSrc}
               alt="subscale-logo"
               loading="eager"
               className="w-[152px]"

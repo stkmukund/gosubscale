@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import { IconArrowUpRight } from '@/components/icons'
 import { cn } from '@/lib/utils'
 
 type CtaButtonProps = {
@@ -30,7 +30,7 @@ export function CtaButton({
       )}
     >
       {children}
-      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <IconArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
     </a>
   )
 }

@@ -42,7 +42,7 @@ const REASONS = [
 
 export function Reasons() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="bg-cream py-20">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
           <h2 className="text-center font-display text-4xl font-extrabold leading-tight tracking-tight text-ink text-balance sm:text-5xl">
@@ -75,7 +75,7 @@ export function Reasons() {
                       width={640}
                       height={460}
                       loading="lazy"
-                      className="relative z-10 h-auto w-full rounded-3xl object-cover"
+                      className="relative z-10 h-auto w-[450px] rounded-3xl object-cover"
                     />
                   </div>
 

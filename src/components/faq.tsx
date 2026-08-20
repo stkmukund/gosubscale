@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Minus } from 'lucide-react'
+import { IconPlus, IconMinus } from '@/components/icons'
 import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
 
@@ -38,7 +38,7 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="bg-cream py-20">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
         <Reveal>
           <h2 className="text-center font-display text-4xl font-extrabold tracking-tight text-ink text-balance sm:text-5xl">
@@ -61,7 +61,7 @@ export function Faq() {
                     {item.q}
                   </span>
                   <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-ink text-white">
-                    {isOpen ? <Minus className="size-4" /> : <Plus className="size-4" />}
+                    {isOpen ? <IconMinus className="size-4" /> : <IconPlus className="size-4" />}
                   </span>
                 </button>
                 <div

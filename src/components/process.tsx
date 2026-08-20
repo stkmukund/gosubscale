@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react'
+import { IconCheck } from '@/components/icons'
 import { CtaButton } from '@/components/cta-button'
 import { Reveal } from '@/components/reveal'
 
@@ -13,7 +13,7 @@ const STEPS = [
 export function Process() {
   return (
     <section className="bg-ink py-20">
-      <div className="mx-auto max-w-4xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <h2 className="text-center font-display text-4xl font-extrabold leading-tight tracking-tight text-white text-balance sm:text-5xl">
             Here&rsquo;s what happens when you partner
@@ -26,7 +26,7 @@ export function Process() {
             <Reveal as="li" key={step.label} delay={i * 80}>
               <div className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-brand/50 hover:bg-white/[0.06]">
                 <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-brand-foreground">
-                  <Check className="size-4" strokeWidth={3} />
+                  <IconCheck className="size-4" strokeWidth={3} />
                 </span>
                 <p className="text-base text-white sm:text-lg">
                   <span className="font-display font-bold text-brand">{step.label}:</span>{' '}

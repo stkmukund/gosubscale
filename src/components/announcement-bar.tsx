@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { X } from 'lucide-react'
+import { IconX } from '@/components/icons'
 
 export function AnnouncementBar() {
   const [open, setOpen] = useState(true)
@@ -19,7 +19,7 @@ export function AnnouncementBar() {
         aria-label="Dismiss announcement"
         className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 transition-colors hover:text-white"
       >
-        <X className="size-4" />
+        <IconX className="size-4" />
       </button>
     </div>
   )

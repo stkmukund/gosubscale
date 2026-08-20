@@ -23,7 +23,7 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="bg-cream py-20">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
           <h2 className="text-center font-display text-4xl font-extrabold leading-tight tracking-tight text-ink text-balance sm:text-5xl">
