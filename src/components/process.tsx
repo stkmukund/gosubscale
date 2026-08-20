@@ -12,7 +12,7 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="bg-ink py-20 md:py-28">
+    <section className="bg-ink py-20">
       <div className="mx-auto max-w-4xl px-5 md:px-8">
         <Reveal>
           <h2 className="text-center font-display text-4xl font-extrabold leading-tight tracking-tight text-white text-balance sm:text-5xl">

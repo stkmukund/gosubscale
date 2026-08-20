@@ -53,6 +53,7 @@ export function Reasons() {
 
         <div className="mt-16 flex flex-col gap-16 md:gap-24">
           {REASONS.map((reason, i) => {
+
             const reversed = i % 2 === 1
             return (
               <Reveal key={reason.n}>
@@ -67,14 +68,14 @@ export function Reasons() {
                       reversed ? 'md:order-1' : 'md:order-2',
                     )}
                   >
-                    <div className="absolute -bottom-4 -right-2 -z-0 size-40 rounded-full bg-brand/25 blur-2xl" />
+                    <div className="absolute -bottom-4 -right-2 -z-0 size-40 rounded-full " />
                     <img
                       src={reason.image || '/placeholder.svg'}
                       alt={reason.alt}
                       width={640}
                       height={460}
                       loading="lazy"
-                      className="relative z-10 h-auto w-full rounded-3xl object-cover shadow-[0_24px_60px_-30px_rgba(0,0,0,0.4)]"
+                      className="relative z-10 h-auto w-full rounded-3xl object-cover"
                     />
                   </div>
 
@@ -82,7 +83,7 @@ export function Reasons() {
                     <span className="flex size-12 items-center justify-center rounded-full border-2 border-ink font-display text-xl font-bold text-ink">
                       {reason.n}
                     </span>
-                    <h3 className="mt-5 font-display text-3xl font-extrabold leading-tight tracking-tight text-ink text-balance sm:text-4xl">
+                    <h3 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight text-ink text-balance sm:text-4xl">
                       {reason.title}
                     </h3>
                     <p className="mt-4 max-w-md text-base leading-relaxed text-black sm:text-lg">
