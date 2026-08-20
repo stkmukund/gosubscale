@@ -8,11 +8,13 @@ import { Faq } from '@/components/faq'
 import { Testimonials } from '@/components/testimonials'
 import { FinalCta } from '@/components/final-cta'
 import { SiteFooter } from '@/components/site-footer'
+import { BlogPage } from '@/components/blog-page'
+import { BlogDetailPage } from '@/components/blog-detail-page'
+import { RouterProvider, useRouter } from '@/lib/router'
 
-export function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-cream text-ink antialiased">
-      <AnnouncementBar />
       <Hero />
       <LogoStrip />
       <WhatWeDo />
@@ -23,6 +25,31 @@ export function App() {
       <FinalCta />
       <SiteFooter />
     </div>
+  )
+}
+
+function MainContent() {
+  const { page, slug } = useRouter()
+
+  return (
+    <>
+      <AnnouncementBar />
+      {page === 'blogs' ? (
+        <BlogPage />
+      ) : page === 'blog-detail' ? (
+        <BlogDetailPage slug={slug} />
+      ) : (
+        <HomePage />
+      )}
+    </>
+  )
+}
+
+export function App() {
+  return (
+    <RouterProvider>
+      <MainContent />
+    </RouterProvider>
   )
 }
 

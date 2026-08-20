@@ -1,33 +1,12 @@
 import { CtaButton } from '@/components/cta-button'
-import { SubScaleLogo } from '@/components/subscale-logo'
 import { Reveal } from '@/components/reveal'
+import { Navbar } from '@/components/navbar'
 
 export function Hero() {
   return (
     <section className="bg-cream">
       {/* Header Bar */}
-      <header className="w-full bg-cream border-b border-black">
-        <div className="mx-auto flex max-w-7xl items-stretch justify-between">
-          <div className="flex items-stretch">
-            <div className="flex items-center border-r border-black px-4 py-3 sm:px-6 md:px-8">
-              <SubScaleLogo />
-            </div>
-            <a
-              href="#blogs"
-              className="hidden sm:flex items-center border-r border-black px-6 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider text-ink hover:bg-black/5 transition-colors"
-            >
-              BLOGS
-            </a>
-          </div>
-
-          <a
-            href="#book-a-demo"
-            className="flex items-center border-l border-black bg-black px-6 py-3 sm:px-8 md:px-10 font-display text-xs md:text-sm font-semibold uppercase tracking-wider text-white hover:bg-ink/90 transition-colors"
-          >
-            BOOK A DEMO
-          </a>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Content */}
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:pt-16 md:pb-20 lg:grid-cols-2 lg:gap-8 lg:py-16">

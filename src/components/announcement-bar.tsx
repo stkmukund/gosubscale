@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { IconX } from '@/components/icons'
+import { Link } from '@/lib/router'
 
 export function AnnouncementBar() {
   const [open, setOpen] = useState(true)
@@ -9,9 +10,12 @@ export function AnnouncementBar() {
     <div className="relative z-50 bg-ink px-10 py-2.5 text-center font-mono text-xs text-white sm:text-sm">
       <p className="mx-auto max-w-3xl tracking-tight">
         RevBoost is now <span className="font-bold text-brand">SubScale.</span>{' '}
-        <a href="#" className="text-brand underline-offset-4 hover:underline">
+        <Link
+          to="/blogs/detail.html?slug=revboost-is-now-subscale"
+          className="text-brand underline-offset-4 hover:underline"
+        >
           Check out our blog &rarr;
-        </a>
+        </Link>
       </p>
       <button
         type="button"

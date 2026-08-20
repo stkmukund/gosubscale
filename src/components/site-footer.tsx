@@ -1,4 +1,5 @@
 import { SubScaleLogo } from '@/components/subscale-logo'
+import { Link } from '@/lib/router'
 
 export function SiteFooter() {
   return (
@@ -22,15 +23,12 @@ export function SiteFooter() {
               Navigation
             </p>
             <nav className="mt-4 flex flex-col gap-2.5 text-sm text-white/60" aria-label="Footer Navigation">
-              <a href="#" className="transition-colors hover:text-brand">
+              <Link to="/" className="transition-colors hover:text-brand">
                 Home (gosubscale.com)
-              </a>
-              <a href="#blogs" className="transition-colors hover:text-brand">
+              </Link>
+              <Link to="/blogs" className="transition-colors hover:text-brand">
                 Blogs
-              </a>
-              {/* <a href="#book-a-demo" className="transition-colors hover:text-brand">
-                Book a Demo
-              </a> */}
+              </Link>
             </nav>
           </div>
 

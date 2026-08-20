@@ -1,0 +1,68 @@
+[
+  {
+    "id": "revboost-is-now-subscale",
+    "slug": "revboost-is-now-subscale",
+    "title": "RevBoost is now SubScale",
+    "category": "Company Update",
+    "author": "John-Marcus Phillips",
+    "postedDate": "August 4, 2026",
+    "excerpt": "Discover why RevBoost rebranded to SubScale and how its new operating system empowers subscription brands with smarter growth, automation, and long-term success.",
+    "bannerImage": "/images/revboost-is-now-subscale.jpg",
+    "toc": [
+      { "id": "introduction", "text": "INTRODUCTION" },
+      { "id": "name", "text": "WHY THE NAME HAD TO GO" },
+      { "id": "changes", "text": "WHAT ACTUALLY CHANGES" },
+      { "id": "skin", "text": "SAME SKIN IN THE GAME" }
+    ],
+    "contentHtml": "<p id=\"introduction\">This is the first thing we've published under the new name, so it’s a great opportunity explain how we arrived here.</p><p>I acquired RevBoost in 2025 because of something I saw in the way it made money.</p><p>Alex, original founder of RevBoost, had built the company in 2021 on a premise that sounds obvious now but was still emerging at the time: the money in e-commerce isn't in the first sale. It's in everything after it. The upsell. The rebill. The retention curve. The dozens of small improvements to an offer or a checkout that compound month over month until the unit economics finally work.</p><p>Most of the market was pointed at the front end i.e. more traffic, better creative, cheaper clicks. However RevBoost has always pointed at the part of the business that actually determines whether a subscription brand survives.</p><p>What I found under the hood wasn't just an agency. It was a system. A specific sequence of things you do to a subscription business, in a specific order, that reliably moves LTV, approval rates, retention, and cash flow — including the compliance work that keeps a processor from shutting the whole thing down on a Tuesday.</p><p>That system is THE asset. The name just described the system.</p><h2 id=\"name\">WHY THE NAME HAD TO GO</h2><p>&quot;Boost&quot; is a word for a moment. You boost a number, it goes up, and you go find another number to boost.</p><p>But that wasn’t what our partners were buying. Nobody signs a multi-year partnership for a moment. They sign because they wanted the machine underneath their revenue to work permanently, predictably, without thinking about it every morning. Our longest-running partner is five years in and still scaling. You don't get five years out of a boost.</p><p>SubScale is the name for what the work already was: subscription brands, scaling with structure.</p><h2 id=\"changes\">WHAT ACTUALLY CHANGES</h2><p>The RevBoost system works, and it runs on expertise, hard work, and people paying very close attention. That scales to a point and then it doesn't.</p><p>So we are building the infrastructure underneath it. Same decisions the system always made — now instrumented, measured, and increasingly automated. We will share more as the product rolls out, but a couple of highlights worth calling out:</p><p><em>One source of truth for revenue.</em> Most merchants can't answer &quot;what is a customer from this channel actually worth at 90 days&quot; without three exports and a lost afternoon. Every good decision downstream depends on fixing that first.</p><p><em>Decisions that run themselves.</em> Cohort LTV forecasting so you know which channels are genuinely profitable. Cross-processor routing that protects authorization rates. Failed payments recovered and churn caught before the charge fails, not after the cancel click.</p><p><em>Readiness for agentic commerce.</em> AI agents are starting to discover products, compare offers, and transact for consumers. They may care less about optimized funnels or fixed subscription schedules, but recurring demand won’t disappear. VIP relationships can give customers and their agents a reason to keep choosing the same merchant.</p><h2 id=\"skin\">SAME SKIN IN THE GAME</h2><p>One thing carries over unchanged: <strong>we only get paid when a partner's subscription revenue grows.</strong> It's the only arrangement that keeps both sides honest about whether the work is working.</p><p>RevBoost proved the thesis: subscription growth is a systems problem, not just a traffic problem.</p><p>RevBoost was the origin. SubScale is the operating system for what comes next.</p><p>Talk to us &rarr; <a href=\"https://gosubscale.com/book/\" target=\"_blank\" rel=\"noopener noreferrer\">https://gosubscale.com/book/</a></p>"
+  },
+  {
+    "id": "scaling-shopify-subscriptions-retention",
+    "slug": "scaling-shopify-subscriptions-retention",
+    "title": "5 Retention Mechanics That Cut Churn by 35% on Shopify",
+    "category": "Subscription Growth",
+    "author": "SubScale Research",
+    "postedDate": "August 10, 2026",
+    "excerpt": "How top direct-to-consumer subscription brands use smart skip intervals, pre-rebill notifications, and dynamic swap catalogs to retain customers past month four.",
+    "bannerImage": "/images/revboost-is-now-subscale.jpg",
+    "toc": [
+      { "id": "introduction", "text": "INTRODUCTION" },
+      { "id": "churn-cliff", "text": "THE MONTH 3 RETENTION CLIFF" },
+      { "id": "dynamic-intervals", "text": "SMART SKIP INTERVALS" },
+      { "id": "takeaways", "text": "TACTICAL TAKEAWAYS" }
+    ],
+    "contentHtml": "<p id=\"introduction\">Subscription retention is rarely won through generic discount popups. It is built directly into customer cadence and product utility.</p><h2 id=\"churn-cliff\">THE MONTH 3 RETENTION CLIFF</h2><p>Over 60% of cancellations happen between billing cycles 2 and 4. Most of these churn events aren't caused by dissatisfaction with the product, but by inventory pileup and rigid renewal schedules.</p><h2 id=\"dynamic-intervals\">SMART SKIP INTERVALS</h2><p>By implementing 1-click delivery pausing and product swaps via SMS and frictionless customer portals, top brands reduce involuntary friction and keep customer lifetime value climbing.</p><h2 id=\"takeaways\">TACTICAL TAKEAWAYS</h2><p>Never treat cancellation as a binary decision. Offer proactive cadence adjustments before churn triggers occur.</p>"
+  },
+  {
+    "id": "checkout-optimization-high-ltv",
+    "slug": "checkout-optimization-high-ltv",
+    "title": "Optimizing Checkout Architecture for High-LTV Subscribers",
+    "category": "Conversion Optimization",
+    "author": "Engineering Team",
+    "postedDate": "August 15, 2026",
+    "excerpt": "Friction points in your checkout flow could be costing you thousands in recurring monthly revenue. Learn how customized storefronts unlock higher first-order conversion.",
+    "bannerImage": "/images/revboost-is-now-subscale.jpg",
+    "toc": [
+      { "id": "introduction", "text": "INTRODUCTION" },
+      { "id": "friction-points", "text": "ELIMINATING CHECKOUT FRICTION" },
+      { "id": "membership-tiering", "text": "PREMIUM MEMBERSHIP TIERS" }
+    ],
+    "contentHtml": "<p id=\"introduction\">Checkout conversion rate is only the start of the equation. What matters is the quality and retention profile of the customers who convert.</p><h2 id=\"friction-points\">ELIMINATING CHECKOUT FRICTION</h2><p>Multi-step checkout fatigue is the fastest way to lose high-intent buyers. Customized single-page subscription funnels with immediate payment tokenization produce up to 24% lift in completed signups.</p><h2 id=\"membership-tiering\">PREMIUM MEMBERSHIP TIERS</h2><p>Structuring tiers around value-add perks rather than steep discounts builds a sustainable recurring revenue foundation.</p>"
+  },
+  {
+    "id": "recovering-failed-rebills-revenue-strategy",
+    "slug": "recovering-failed-rebills-revenue-strategy",
+    "title": "Automated Dunning & Processor Routing: The Hidden Revenue Multiplier",
+    "category": "Revenue Strategies",
+    "author": "SubScale Operations",
+    "postedDate": "August 18, 2026",
+    "excerpt": "Discover how intelligent retry algorithms and cross-processor load balancing protect authorization rates and recover lost revenue before cancellation happens.",
+    "bannerImage": "/images/revboost-is-now-subscale.jpg",
+    "toc": [
+      { "id": "introduction", "text": "INTRODUCTION" },
+      { "id": "involuntary-churn", "text": "SOLVING INVOLUNTARY CHURN" },
+      { "id": "multi-processor", "text": "MULTI-PROCESSOR ROUTING" }
+    ],
+    "contentHtml": "<p id=\"introduction\">Involuntary churn accounts for nearly 40% of all lost subscription revenue in e-commerce. Up to half of failed payments can be successfully recovered with the right technology stack.</p><h2 id=\"involuntary-churn\">SOLVING INVOLUNTARY CHURN</h2><p>Smart dunning schedules that align retry attempts with banking pay cycles and card brand network tokens dramatically enhance transaction recovery rates.</p><h2 id=\"multi-processor\">MULTI-PROCESSOR ROUTING</h2><p>Distributing volume intelligently across acquiring banks ensures zero single points of failure for high-volume subscription businesses.</p>"
+  }
+]
