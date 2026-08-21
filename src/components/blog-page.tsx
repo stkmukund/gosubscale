@@ -135,11 +135,10 @@ function BlogCard({ blog }: { blog: BlogPost }) {
         </div>
 
         {/* Metadata */}
-        <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] sm:text-xs text-black/60">
+        <div className="mb-3 flex justify-between items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs text-black/60">
           <span>
             <strong className="text-black font-semibold">Author:</strong> {blog.author}
           </span>
-          <span className="text-black/30">•</span>
           <span>
             <strong className="text-black font-semibold">Posted:</strong> {blog.postedDate}
           </span>
@@ -180,11 +179,9 @@ function BlogListRow({ blog }: { blog: BlogPost }) {
           <span className="inline-block rounded-md border border-emerald-500/30 bg-emerald-50 px-2.5 py-0.5 font-semibold text-emerald-700 shrink-0">
             {blog.category}
           </span>
-          <span className="text-black/30">•</span>
           <span className="text-black/60">
             <strong className="text-black font-semibold">Posted:</strong> {blog.postedDate}
           </span>
-          <span className="text-black/30">•</span>
           <span className="text-black/60">
             <strong className="text-black font-semibold">Author:</strong> {blog.author}
           </span>
