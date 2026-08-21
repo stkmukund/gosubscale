@@ -9,7 +9,7 @@ export function Hero() {
       <Navbar />
 
       {/* Hero Content */}
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:pt-16 md:pb-20 lg:grid-cols-2 lg:gap-8 lg:py-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pt-10 pb-12 sm:px-8 sm:pt-14 sm:pb-16 md:pt-16 md:pb-20 lg:grid-cols-2 lg:gap-8 lg:pt-16 lg:pb-0">
         <Reveal className="order-2 lg:order-1 flex flex-col items-start justify-center w-full">
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-5xl font-bold leading-[1.08] tracking-tight sm:tracking-wide text-ink">
             <span className="italic text-brand">Sub</span>scriptions That

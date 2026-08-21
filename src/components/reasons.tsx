@@ -74,7 +74,7 @@ export function Reasons() {
                       width={640}
                       height={460}
                       loading="lazy"
-                      className="relative z-10 h-auto w-full max-w-[340px] sm:max-w-[420px] md:max-w-[450px] rounded-2xl sm:rounded-3xl"
+                      className="relative z-10 h-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[400px]"
                     />
                   </div>
 
