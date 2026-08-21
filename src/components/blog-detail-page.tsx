@@ -99,13 +99,13 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
       <Navbar />
 
       <main className="flex-grow">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 md:pt-12 pb-14 sm:pb-16">
           {/* Top Hero Banner */}
           <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border border-black/10 bg-white shadow-sm">
             <img
               src={blog.bannerImage || '/images/revboost-is-now-subscale.jpg'}
               alt={blog.title}
-              className="w-full h-auto max-h-[460px] object-cover object-center"
+              className="w-full"
             />
             {/* Posted Date Pill Badge on bottom-right of banner */}
             <div className="sm:absolute sm:bottom-0 sm:right-0 bg-brand text-white px-4 py-2 sm:px-6 sm:py-2.5 sm:rounded-tl-xl text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center sm:justify-start gap-1">
@@ -115,11 +115,11 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
           </div>
 
           {/* Article & Sidebar Grid */}
-          <div className="mt-10 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left Main Article Column */}
-            <article className="lg:col-span-8">
+            <article className="lg:col-span-8 min-w-0">
               {/* Author & Category Meta */}
-              <div className="text-xs sm:text-sm text-black/75 mb-3 font-medium">
+              <div className="text-xs sm:text-sm text-black/75 mb-3 font-medium flex flex-wrap items-center gap-y-1">
                 <span>
                   <strong className="text-black font-bold">Author:</strong> {blog.author}
                 </span>
@@ -130,25 +130,25 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
               </div>
 
               {/* Blog Title */}
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.15] mb-8">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-ink leading-[1.15] mb-6 sm:mb-8 break-words">
                 {blog.title}
               </h1>
 
               {/* Blog HTML Content */}
               <div
-                className="blog-prose space-y-6 text-base sm:text-lg leading-relaxed text-black/85 font-normal"
+                className="blog-prose space-y-5 sm:space-y-6 text-sm sm:text-base md:text-lg leading-relaxed text-black/85 font-normal"
                 dangerouslySetInnerHTML={{ __html: blog.contentHtml || '' }}
               />
             </article>
 
             {/* Right Sticky Table of Contents Sidebar */}
             {blog.toc && blog.toc.length > 0 && (
-              <aside className="lg:col-span-4 lg:sticky lg:top-24">
-                <div className="rounded-xl border border-black/10 bg-white p-6 shadow-xs">
-                  <h3 className="font-display text-lg font-bold text-ink tracking-tight pb-3 border-b border-black/10">
+              <aside className="lg:col-span-4 lg:sticky lg:top-24 w-full">
+                <div className="rounded-xl border border-black/10 bg-white p-5 sm:p-6 shadow-xs">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-ink tracking-tight pb-3 border-b border-black/10">
                     Table of Contents
                   </h3>
-                  <ul className="mt-4 space-y-3">
+                  <ul className="mt-3.5 space-y-2.5 sm:space-y-3">
                     {blog.toc.map((item) => {
                       const isActive = activeTocId === item.id
                       return (
@@ -174,10 +174,10 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
           </div>
 
           {/* Back to Blogs Button */}
-          <div className="mt-14 sm:mt-16 flex justify-center">
+          <div className="mt-10 sm:mt-14 md:mt-16 flex justify-center">
             <Link
               to="/blogs"
-              className="inline-flex items-center justify-center gap-3 rounded-lg bg-black px-8 py-3.5 font-display text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-ink/90 active:scale-[0.99]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-lg bg-black px-8 py-3.5 font-display text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-ink/90 active:scale-[0.99]"
             >
               <IconArrowLeft className="size-4" />
               <span>BACK TO BLOGS</span>
@@ -186,33 +186,33 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
 
           {/* Similar Blogs Section */}
           {similarBlogs.length > 0 && (
-            <section className="mt-20 pt-12 border-t border-black/15">
-              <div className="mb-8 text-center sm:text-left">
-                <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            <section className="mt-14 sm:mt-16 md:mt-20 pt-10 sm:pt-12 border-t border-black/15">
+              <div className="mb-6 sm:mb-8 text-center sm:text-left">
+                <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-ink">
                   Similar Blogs
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                 {similarBlogs.map((simBlog) => (
                   <article
                     key={simBlog.id}
-                    className="flex flex-col justify-between rounded-xl border border-black/10 bg-white p-6 shadow-xs transition-all hover:shadow-md hover:-translate-y-1"
+                    className="flex flex-col justify-between rounded-xl border border-black/10 bg-white p-5 sm:p-6 shadow-xs transition-all hover:shadow-md hover:-translate-y-1"
                   >
                     <div>
-                      <div className="mb-3">
+                      <div className="mb-2.5">
                         <span className="inline-block rounded-md border border-emerald-500/30 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
                           {simBlog.category}
                         </span>
                       </div>
-                      <div className="mb-2 text-xs text-black/60">
+                      <div className="mb-2 flex flex-wrap items-center gap-x-2 text-xs text-black/60">
                         <span>
                           <strong className="text-black font-semibold">Author:</strong> {simBlog.author}
                         </span>
-                        <span className="mx-2">•</span>
+                        <span>•</span>
                         <span>{simBlog.postedDate}</span>
                       </div>
-                      <h3 className="font-display text-lg font-bold text-ink hover:text-brand transition-colors line-clamp-2">
+                      <h3 className="font-display text-base sm:text-lg font-bold text-ink hover:text-brand transition-colors line-clamp-2 leading-snug">
                         <Link to={`/blogs/detail.html?slug=${simBlog.slug}`}>
                           {simBlog.title}
                         </Link>
@@ -222,7 +222,7 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
                       </p>
                     </div>
 
-                    <div className="mt-6 pt-2">
+                    <div className="mt-5 sm:mt-6 pt-2">
                       <Link
                         to={`/blogs/detail.html?slug=${simBlog.slug}`}
                         className="flex w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2.5 font-display text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-all hover:bg-brand/90"

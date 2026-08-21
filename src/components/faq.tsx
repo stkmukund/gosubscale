@@ -38,15 +38,15 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section className="bg-cream py-20">
-      <div className="mx-auto max-w-3xl px-5 md:px-8">
+    <section className="bg-cream py-14 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8">
         <Reveal>
-          <h2 className="text-center font-display text-4xl font-extrabold tracking-tight text-ink text-balance sm:text-5xl">
+          <h2 className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-ink text-balance">
             Frequently Asked Questions
           </h2>
         </Reveal>
 
-        <Reveal className="mt-12 divide-y divide-ink/12 border-y border-ink/12">
+        <Reveal className="mt-10 sm:mt-12 divide-y divide-ink/12 border-y border-ink/12">
           {FAQS.map((item, i) => {
             const isOpen = open === i
             return (
@@ -55,23 +55,23 @@ export function Faq() {
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 sm:gap-6 py-4 sm:py-5 text-left cursor-pointer"
                 >
-                  <span className="font-display text-lg font-semibold text-ink sm:text-xl">
+                  <span className="font-display text-base sm:text-lg md:text-xl font-semibold text-ink leading-snug">
                     {item.q}
                   </span>
-                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-ink text-white">
-                    {isOpen ? <IconMinus className="size-4" /> : <IconPlus className="size-4" />}
+                  <span className="flex size-6 sm:size-7 shrink-0 items-center justify-center rounded-full bg-ink text-white">
+                    {isOpen ? <IconMinus className="size-3.5 sm:size-4" /> : <IconPlus className="size-3.5 sm:size-4" />}
                   </span>
                 </button>
                 <div
                   className={cn(
                     'grid transition-all duration-300 ease-out',
-                    isOpen ? 'grid-rows-[1fr] pb-6 opacity-100' : 'grid-rows-[0fr] opacity-0',
+                    isOpen ? 'grid-rows-[1fr] pb-5 sm:pb-6 opacity-100' : 'grid-rows-[0fr] opacity-0',
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl text-base leading-relaxed text-black">{item.a}</p>
+                    <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-black/85">{item.a}</p>
                   </div>
                 </div>
               </div>

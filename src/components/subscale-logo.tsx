@@ -18,22 +18,15 @@ export function SubScaleLogo({
         className,
       )}
     >
-      {/* <svg viewBox="0 0 24 24" className="size-6 text-brand" fill="none" aria-hidden="true">
-        <path
-          d="M4 15L11 8l4 4 6-8"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path d="M15 4h6v6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg> */}
-        <img
-              src={logoSrc}
-              alt="subscale-logo"
-              loading="eager"
-              className="w-[152px]"
-            />
+      <img
+        src={logoSrc}
+        alt="subscale-logo"
+        loading="eager"
+        className={cn(
+          'h-auto object-contain transition-all',
+          variant === 'footer' ? 'w-[130px] sm:w-[152px]' : 'w-[115px] xs:w-[130px] sm:w-[152px]'
+        )}
+      />
     </span>
   )
 }

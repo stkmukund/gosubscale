@@ -29,17 +29,17 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full bg-cream/95 backdrop-blur border-b border-black">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between">
-        <div className="flex items-stretch">
+        <div className="flex items-stretch min-w-0">
           <Link
             to="/"
-            className="flex items-center border-r border-black px-4 py-3 sm:px-6 md:px-8 hover:bg-black/5 transition-colors"
+            className="flex items-center border-r border-black px-3 py-2.5 sm:px-6 md:px-8 sm:py-3 hover:bg-black/5 transition-colors shrink-0"
             aria-label="SubScale Home"
           >
             <SubScaleLogo />
           </Link>
           <Link
             to="/blogs"
-            className={`hidden sm:flex items-center border-r border-black px-6 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors ${
+            className={`hidden sm:flex items-center border-r border-black px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
               page === 'blogs' || page === 'blog-detail'
                 ? 'bg-black text-white hover:bg-black/90'
                 : 'text-ink hover:bg-black/5'
@@ -50,11 +50,11 @@ export function Navbar() {
         </div>
 
         {/* Right side buttons */}
-        <div className="flex items-stretch">
+        <div className="flex items-stretch shrink-0">
           <a
             href="#book-a-demo"
             onClick={handleBookDemo}
-            className="flex items-center border-l border-black bg-black px-5 py-3 sm:px-8 md:px-10 font-display text-xs md:text-sm font-semibold uppercase tracking-wider text-white hover:bg-ink/90 transition-colors"
+            className="flex items-center border-l border-black bg-black px-3.5 py-2.5 sm:px-8 md:px-10 sm:py-3 font-display text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-white hover:bg-ink/90 transition-colors whitespace-nowrap"
           >
             BOOK A DEMO
           </a>
@@ -63,8 +63,9 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex sm:hidden items-center border-l border-black px-4 text-ink hover:bg-black/5"
+            className="flex sm:hidden items-center justify-center border-l border-black px-3.5 text-ink hover:bg-black/5 transition-colors cursor-pointer"
             aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
               <IconX className="size-5" />
@@ -79,19 +80,19 @@ export function Navbar() {
 
       {/* Mobile dropdown drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-black bg-cream px-5 py-4 space-y-3">
+        <div className="sm:hidden border-b border-black bg-cream px-5 py-3 divide-y divide-black/10">
           <Link
             to="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="block font-display text-sm font-semibold text-ink hover:text-brand"
+            className="block py-2.5 font-display text-sm font-semibold text-ink hover:text-brand transition-colors"
           >
             HOME
           </Link>
           <Link
             to="/blogs"
             onClick={() => setMobileMenuOpen(false)}
-            className={`block font-display text-sm font-bold tracking-wider ${
-              page === 'blogs' || page === 'blog-detail' ? 'text-brand' : 'text-ink'
+            className={`block py-2.5 font-display text-sm font-bold tracking-wider transition-colors ${
+              page === 'blogs' || page === 'blog-detail' ? 'text-brand' : 'text-ink hover:text-brand'
             }`}
           >
             BLOGS
@@ -102,7 +103,7 @@ export function Navbar() {
               setMobileMenuOpen(false)
               handleBookDemo(e)
             }}
-            className="block font-display text-sm font-semibold text-ink hover:text-brand"
+            className="block py-2.5 font-display text-sm font-semibold text-ink hover:text-brand transition-colors"
           >
             BOOK A DEMO
           </a>

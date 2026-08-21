@@ -23,28 +23,28 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section className="bg-cream py-20">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section className="bg-cream py-14 sm:py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-8">
         <Reveal>
-          <h2 className="text-center font-display text-4xl font-extrabold leading-tight tracking-tight text-ink text-balance sm:text-5xl">
+          <h2 className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-ink text-balance">
             They&rsquo;re raving about
             <br className="hidden sm:block" /> SubScale&trade;
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 sm:mt-14 grid gap-6 sm:gap-8 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
-              <figure className="flex h-full flex-col justify-between rounded-3xl bg-white p-7 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1">
-                <span className="font-display text-5xl leading-none text-brand" aria-hidden="true">
+              <figure className="flex h-full flex-col justify-between rounded-2xl sm:rounded-3xl bg-white p-6 sm:p-7 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1">
+                <span className="font-display text-4xl sm:text-5xl leading-none text-brand" aria-hidden="true">
                   &ldquo;
                 </span>
-                <blockquote className="mt-2 flex-1 text-base leading-relaxed text-ink/75">
+                <blockquote className="mt-2 flex-1 text-sm sm:text-base leading-relaxed text-ink/80">
                   {t.quote}
                 </blockquote>
-                <figcaption className="mt-6 border-t border-ink/10 pt-5">
+                <figcaption className="mt-5 sm:mt-6 border-t border-ink/10 pt-4 sm:pt-5">
                   <p className="font-display font-bold text-ink">{t.name}</p>
-                  <p className="mt-0.5 text-sm text-ink/55">{t.title}</p>
+                  <p className="mt-0.5 text-xs sm:text-sm text-ink/60">{t.title}</p>
                 </figcaption>
               </figure>
             </Reveal>
