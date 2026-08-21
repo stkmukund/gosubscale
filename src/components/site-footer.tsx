@@ -3,7 +3,7 @@ import { Link } from '@/lib/router'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink px-5 py-12 sm:px-6 md:px-8 sm:py-14">
+    <footer className="bg-black px-5 py-12 sm:px-6 md:px-8 sm:py-14">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 sm:gap-10 sm:pb-12 md:grid-cols-3">
           {/* Column 1: Brand */}

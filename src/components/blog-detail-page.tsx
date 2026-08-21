@@ -213,7 +213,7 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
                         <span>{simBlog.postedDate}</span>
                       </div>
                       <h3 className="font-display text-base sm:text-lg font-bold text-ink hover:text-brand transition-colors line-clamp-2 leading-snug">
-                        <Link to={`/blogs/detail.html?slug=${simBlog.slug}`}>
+                        <Link to={`/blogs/${simBlog.slug}`}>
                           {simBlog.title}
                         </Link>
                       </h3>
@@ -224,7 +224,7 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
 
                     <div className="mt-5 sm:mt-6 pt-2">
                       <Link
-                        to={`/blogs/detail.html?slug=${simBlog.slug}`}
+                        to={`/blogs/${simBlog.slug}`}
                         className="flex w-full items-center justify-center gap-2 rounded-md bg-brand px-4 py-2.5 font-display text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-all hover:bg-brand/90"
                       >
                         <span>READ BLOG</span>
