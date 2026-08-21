@@ -101,18 +101,19 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
       <main className="flex-grow">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 md:pt-12 pb-14 sm:pb-16">
           {/* Top Hero Banner */}
-          <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div className="relative overflow-visible border border-black/10 bg-white shadow-xs">
             <img
-              src={blog.bannerImage || '/images/revboost-is-now-subscale.jpg'}
-              alt={blog.title}
-              className="w-full"
+              alt="RevBoost is now SubScale"
+              className="w-full h-auto block"
+              src="/images/revboost-is-now-subscale01.jpg"
             />
-            {/* Posted Date Pill Badge on bottom-right of banner */}
-            <div className="sm:absolute sm:bottom-0 sm:right-0 bg-brand text-white px-4 py-2 sm:px-6 sm:py-2.5 sm:rounded-tl-xl text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center sm:justify-start gap-1">
+
+            <div className="absolute bottom-[-10px] sm:bottom-[-15px] right-4 sm:right-10 z-10 bg-brand text-white px-2.5 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide flex items-center gap-1 whitespace-nowrap">
               <span>Posted Date:</span>
-              <span className="font-bold">{blog.postedDate}</span>
+              <span className="font-semibold">August 4, 2026</span>
             </div>
           </div>
+
 
           {/* Article & Sidebar Grid */}
           <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -156,11 +157,10 @@ export function BlogDetailPage({ slug }: { slug: string | null }) {
                           <a
                             href={`#${item.id}`}
                             onClick={(e) => scrollToSection(e, item.id)}
-                            className={`block text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors hover:text-brand ${
-                              isActive
-                                ? 'text-brand font-bold translate-x-1 duration-150'
-                                : 'text-black/70'
-                            }`}
+                            className={`block text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors hover:text-brand ${isActive
+                              ? 'text-brand font-bold translate-x-1 duration-150'
+                              : 'text-black/70'
+                              }`}
                           >
                             {item.text}
                           </a>

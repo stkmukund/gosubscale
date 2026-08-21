@@ -65,7 +65,7 @@ export function BlogPage() {
             </div>
 
             {/* View Toggle */}
-            <div className="flex items-center justify-end">
+            <div className="hidden sm:flex items-center justify-end">
               <button
                 type="button"
                 onClick={() => setViewMode((prev) => (prev === 'grid' ? 'list' : 'grid'))}

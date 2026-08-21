@@ -9,10 +9,10 @@ export function SiteFooter() {
           {/* Column 1: Brand */}
           <div className="space-y-3 sm:space-y-4">
             <SubScaleLogo variant="footer" />
-            <p className="text-sm leading-relaxed text-white/60">
+            <p className="text-sm leading-relaxed text-white">
               Subscriptions That Scale Your Bottom Line.
             </p>
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-white">
               Guaranteed performance-based revenue growth for e-commerce brands.
             </p>
           </div>
@@ -22,11 +22,11 @@ export function SiteFooter() {
             <p className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Navigation
             </p>
-            <nav className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white/60" aria-label="Footer Navigation">
+            <nav className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white" aria-label="Footer Navigation">
               <Link to="/" className="transition-colors hover:text-brand">
-                Home (gosubscale.com)
+                Home
               </Link>
-              <Link to="/blogs" className="transition-colors hover:text-brand">
+              <Link to="/blogs" className="transition-colors text-white hover:text-brand">
                 Blogs
               </Link>
             </nav>
@@ -35,24 +35,24 @@ export function SiteFooter() {
           {/* Column 3: Contact & Legal */}
           <div className="sm:col-span-2 md:col-span-1">
             <p className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-              Contact &amp; Legal
+              Subscale™
             </p>
-            <div className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white/60">
+            <div className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white">
               <a
                 href="mailto:partnerships@gosubscale.com"
                 className="transition-colors hover:text-brand break-all sm:break-normal"
               >
-                partnerships@gosubscale.com
+                Privacy Policy
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 sm:mt-8 flex flex-col items-center justify-between gap-3 text-xs text-white/45 text-center sm:flex-row sm:text-left">
+        <div className="mt-6 sm:mt-8 flex flex-col items-center justify-between gap-3 text-xs text-white text-center sm:flex-row sm:text-left">
           <p>&copy; Copyright 2026 SubScale&trade;</p>
           <p>All Rights Reserved</p>
-          <a href="#" className="transition-colors hover:text-brand">
+          <a href="#" className="transition-colors text-white hover:text-brand">
             Back to Top &uarr;
           </a>
         </div>
