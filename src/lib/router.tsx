@@ -16,89 +16,46 @@ function parseLocation(): RouteState {
 
   const pathname = window.location.pathname
   const search = window.location.search
-  const hash = window.location.hash
   const urlParams = new URLSearchParams(search)
 
-  // 1. Query parameter slug detection: /blogs/detail.html?slug=... or ?slug=...
+  // Query parameter slug detection: ?slug=...
   const querySlug = urlParams.get('slug')
   if (querySlug) {
-    return {
-      page: 'blog-detail',
-      slug: querySlug,
-      pathname,
-      search,
-    }
+    return { page: 'blog-detail', slug: querySlug, pathname, search }
   }
 
-  // 2. Hash routing fallbacks: #/blogs, #blogs, #/blogs/detail.html?slug=...
-  if (hash.startsWith('#/blogs/detail') || hash.includes('slug=')) {
-    const hashParams = new URLSearchParams(hash.split('?')[1] || '')
-    const hashSlug = hashParams.get('slug') || 'revboost-is-now-subscale'
-    return {
-      page: 'blog-detail',
-      slug: hashSlug,
-      pathname,
-      search,
+  // /blog/:slug
+  const blogPrefix = '/blog/'
+  if (pathname.startsWith(blogPrefix)) {
+    const subPath = pathname.slice(blogPrefix.length).replace(/\/$/, '')
+    if (subPath && subPath !== 'index.html') {
+      return { page: 'blog-detail', slug: subPath, pathname, search }
     }
+    return { page: 'blogs', slug: null, pathname: '/blog', search }
   }
 
-  if (hash === '#blogs' || hash === '#/blogs') {
-    return {
-      page: 'blogs',
-      slug: null,
-      pathname: '/blogs',
-      search,
-    }
+  // /blog
+  if (pathname === '/blog' || pathname === '/blog/') {
+    return { page: 'blogs', slug: null, pathname: '/blog', search }
   }
 
-  // 3. Pathname matching:
-  // /blogs/detail.html without query param -> fallback to featured slug
-  if (pathname.includes('/blogs/detail.html') || pathname.endsWith('/detail.html')) {
-    return {
-      page: 'blog-detail',
-      slug: 'revboost-is-now-subscale',
-      pathname,
-      search,
-    }
-  }
-
-  // /blogs/:slug
-  const blogsPrefix = '/blogs/'
-  if (pathname.startsWith(blogsPrefix)) {
-    const subPath = pathname.slice(blogsPrefix.length).replace(/\/$/, '')
+  // Legacy /blogs/:slug → redirect to /blog/:slug
+  const legacyPrefix = '/blogs/'
+  if (pathname.startsWith(legacyPrefix)) {
+    const subPath = pathname.slice(legacyPrefix.length).replace(/\/$/, '')
     if (subPath && subPath !== 'index.html' && subPath !== 'detail.html') {
-      return {
-        page: 'blog-detail',
-        slug: subPath,
-        pathname,
-        search,
-      }
+      return { page: 'blog-detail', slug: subPath, pathname, search }
     }
-    return {
-      page: 'blogs',
-      slug: null,
-      pathname: '/blogs',
-      search,
-    }
+    return { page: 'blogs', slug: null, pathname: '/blog', search }
   }
 
   // /blogs
   if (pathname === '/blogs' || pathname === '/blogs/') {
-    return {
-      page: 'blogs',
-      slug: null,
-      pathname: '/blogs',
-      search,
-    }
+    return { page: 'blogs', slug: null, pathname: '/blog', search }
   }
 
   // Default home page
-  return {
-    page: 'home',
-    slug: null,
-    pathname: '/',
-    search,
-  }
+  return { page: 'home', slug: null, pathname: '/', search }
 }
 
 interface RouterContextValue extends RouteState {
@@ -129,13 +86,12 @@ export function RouterProvider({ children }: { children: React.ReactNode }) {
   const navigate = (to: string, options?: { replace?: boolean }) => {
     if (typeof window === 'undefined') return
 
-    // Handle external or mailto links
     if (to.startsWith('http://') || to.startsWith('https://') || to.startsWith('mailto:')) {
       window.location.href = to
       return
     }
 
-    if (to.startsWith('#') && !to.startsWith('#/blogs') && !to.includes('slug=')) {
+    if (to.startsWith('#') && !to.startsWith('#/blog')) {
       const element = document.querySelector(to)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
@@ -196,7 +152,6 @@ export function Link({
       return
     }
 
-    // If external or mailto link, let default browser behavior happen
     if (to.startsWith('http') || to.startsWith('mailto:')) {
       if (onClick) onClick(e)
       return

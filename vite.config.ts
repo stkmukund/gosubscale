@@ -33,6 +33,7 @@ export default defineConfig({
       'tailwind-merge',
       'class-variance-authority',
       '@base-ui/react/button',
+      'framer-motion',
     ],
   },
 })

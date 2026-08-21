@@ -2,8 +2,9 @@ import { AnnouncementBar } from '@/components/announcement-bar'
 import { Hero } from '@/components/hero'
 import { LogoStrip } from '@/components/logo-strip'
 import { WhatWeDo } from '@/components/what-we-do'
-import { Reasons } from '@/components/reasons'
+import { Calculator } from '@/components/calculator'
 import { Process } from '@/components/process'
+import { Comparison } from '@/components/comparison'
 import { Faq } from '@/components/faq'
 import { Testimonials } from '@/components/testimonials'
 import { FinalCta } from '@/components/final-cta'
@@ -14,14 +15,15 @@ import { RouterProvider, useRouter } from '@/lib/router'
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-cream text-ink antialiased">
+    <div className="min-h-screen bg-[#0a0b0f] text-white antialiased">
       <Hero />
       <LogoStrip />
       <WhatWeDo />
-      <Reasons />
+      <Calculator />
       <Process />
-      <Faq />
+      <Comparison />
       <Testimonials />
+      <Faq />
       <FinalCta />
       <SiteFooter />
     </div>

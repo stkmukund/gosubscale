@@ -57,12 +57,10 @@
 
 :root {
   color-scheme: light;
-  /* --cream: #f7f3e8; */
-  --cream: #fdf9f1;
-  --ink: #0c0c0c;
-  /* --brand: #1fc95a; */
-  --brand: #01be69;
-  --brand-foreground: #05230f;
+  --cream: #f8f9fb;
+  --ink: #0a0b0f;
+  --brand: #10b981;
+  --brand-foreground: #052e1b;
   --background: var(--cream);
   --foreground: #111111;
   --card: #ffffff;
