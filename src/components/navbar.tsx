@@ -30,13 +30,33 @@ export function Navbar() {
     <header className="sticky top-0 z-40 w-full bg-cream/95 backdrop-blur border-b border-black">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between">
         <div className="flex items-stretch min-w-0">
+          {/* Mobile hamburger toggle (left) */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex sm:hidden items-center justify-center border-r-0 md:border-r border-black px-3.5 text-ink hover:bg-black/5 transition-colors cursor-pointer"
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? (
+              <IconX className="size-5" />
+            ) : (
+              <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+
+          {/* Logo */}
           <Link
             to="/"
-            className="flex items-center border-r border-black px-3 py-2.5 sm:px-6 md:px-8 sm:py-3 hover:bg-black/5 transition-colors shrink-0"
+            className="flex items-center sm:border-r sm:border-black px-3 py-2.5 sm:px-6 md:px-8 sm:py-3 hover:bg-black/5 transition-colors shrink-0"
             aria-label="SubScale Home"
           >
             <SubScaleLogo />
           </Link>
+
+          {/* Desktop navigation */}
           <Link
             to="/blogs"
             className={`hidden sm:flex items-center border-r border-black px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
@@ -58,23 +78,6 @@ export function Navbar() {
           >
             BOOK A DEMO
           </a>
-
-          {/* Mobile hamburger toggle */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex sm:hidden items-center justify-center border-l border-black px-3.5 text-ink hover:bg-black/5 transition-colors cursor-pointer"
-            aria-label="Toggle mobile menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? (
-              <IconX className="size-5" />
-            ) : (
-              <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
         </div>
       </div>
 
