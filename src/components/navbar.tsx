@@ -59,10 +59,10 @@ export function Navbar() {
           {/* Desktop navigation */}
           <Link
             to="/blogs"
-            className={`hidden sm:flex items-center border-r border-black px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
+            className={`hidden sm:flex items-center border-b-5 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
               page === 'blogs' || page === 'blog-detail'
-                ? 'bg-black text-white hover:bg-black/90'
-                : 'text-ink hover:bg-black/5'
+                ? 'text-brand border-brand'
+                : 'text-ink border-transparent hover:text-brand hover:border-brand'
             }`}
           >
             BLOGS
