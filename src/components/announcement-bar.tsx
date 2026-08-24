@@ -7,7 +7,7 @@ export function AnnouncementBar() {
   if (!open) return null
 
   return (
-    <div className="relative z-50 bg-ink pl-4 pr-10 py-2 sm:px-10 sm:py-2.5 text-center font-mono text-xs text-white sm:text-sm">
+    <div className="relative z-50 bg-ink pl-4 pr-10 py-2 sm:px-10 sm:py-2.5 text-center font-mono text-[10px] text-white sm:text-sm">
       <p className="mx-auto max-w-3xl tracking-tight leading-normal">
         RevBoost is now <span className="font-bold text-brand">SubScale.</span>{' '}
         <Link

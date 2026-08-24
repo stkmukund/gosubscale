@@ -14,7 +14,7 @@ export function FinalCta() {
         <div className="mt-8 flex justify-center w-full">
           <a
             href="#book-a-demo"
-            className="group inline-flex items-center justify-center gap-2 rounded-xs sm:rounded-sm bg-brand px-6 py-3.5 sm:px-8 sm:py-4 font-display text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand/90 active:scale-[0.99] w-full sm:w-auto"
+            className="group inline-flex items-center justify-center gap-2 rounded-xs sm:rounded-sm bg-brand px-3 py-3.5 sm:px-8 sm:py-4 font-display text-[10px] sm:text-sm md:text-base font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand/90 active:scale-[0.99] w-full sm:w-auto"
           >
             <span>YES, I WANT GUARANTEED RESULTS</span>
             <IconArrowRight className="size-4 sm:size-5 transition-transform duration-300 group-hover:translate-x-1" />

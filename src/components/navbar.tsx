@@ -30,11 +30,11 @@ export function Navbar() {
     <header className="sticky top-0 z-40 w-full bg-cream/95 backdrop-blur border-b border-black">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between">
         <div className="flex items-stretch min-w-0">
-          {/* Mobile hamburger toggle (left) */}
+          {/* Hamburger toggle (left) - visible at <= 1400px */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex sm:hidden items-center justify-center border-r-0 md:border-r border-black px-3.5 text-ink hover:bg-black/5 transition-colors cursor-pointer"
+            className="flex min-[1401px]:hidden items-center justify-center border-r border-black px-3.5 text-ink hover:bg-black/5 transition-colors cursor-pointer"
             aria-label="Toggle mobile menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -50,16 +50,16 @@ export function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center sm:border-r sm:border-black px-3 py-2.5 sm:px-6 md:px-8 sm:py-3 hover:bg-black/5 transition-colors shrink-0"
+            className="flex items-center min-[1401px]:border-r min-[1401px]:border-black px-3 py-2.5 sm:px-6 md:px-8 sm:py-3 hover:bg-black/5 transition-colors shrink-0"
             aria-label="SubScale Home"
           >
             <SubScaleLogo />
           </Link>
 
-          {/* Desktop navigation */}
+          {/* Desktop navigation - visible at > 1400px */}
           <Link
             to="/blogs"
-            className={`hidden sm:flex items-center border-b-5 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
+            className={`hidden min-[1401px]:flex items-center border-b-2 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
               page === 'blogs' || page === 'blog-detail'
                 ? 'text-brand border-brand'
                 : 'text-ink border-transparent hover:text-brand hover:border-brand'
@@ -81,9 +81,9 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown drawer */}
+      {/* Mobile dropdown drawer - visible at <= 1400px when open */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-black bg-cream px-5 py-3 divide-y divide-black/10">
+        <div className="min-[1401px]:hidden border-b border-black bg-cream px-5 py-3 divide-y divide-black/10">
           <Link
             to="/"
             onClick={() => setMobileMenuOpen(false)}
@@ -100,16 +100,7 @@ export function Navbar() {
           >
             BLOGS
           </Link>
-          <a
-            href="#book-a-demo"
-            onClick={(e) => {
-              setMobileMenuOpen(false)
-              handleBookDemo(e)
-            }}
-            className="block py-2.5 font-display text-sm font-semibold text-ink hover:text-brand transition-colors"
-          >
-            BOOK A DEMO
-          </a>
+        
         </div>
       )}
     </header>
