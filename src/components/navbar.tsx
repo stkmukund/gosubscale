@@ -59,7 +59,7 @@ export function Navbar() {
           {/* Desktop navigation - visible at > 1400px */}
           <Link
             to="/blogs"
-            className={`hidden min-[1401px]:flex items-center border-b-2 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
+            className={`hidden min-[1401px]:flex items-center border-b-4 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
               page === 'blogs' || page === 'blog-detail'
                 ? 'text-brand border-brand'
                 : 'text-ink border-transparent hover:text-brand hover:border-brand'
