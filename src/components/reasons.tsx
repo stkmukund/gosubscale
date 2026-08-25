@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { CtaButton } from '@/components/cta-button'
 import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
+import { BookADemoModal } from '@/components/book-a-demo-modal'
 
 const REASONS = [
   {
@@ -41,6 +43,8 @@ const REASONS = [
 ]
 
 export function Reasons() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
+
   return (
     <section className="bg-cream py-14 sm:py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
@@ -79,7 +83,14 @@ export function Reasons() {
                         {reason.body}
                       </p>
                       <div className="mt-6 sm:mt-8 w-full sm:w-auto">
-                        <CtaButton size="lg" className="w-full sm:w-auto">
+                        <CtaButton
+                          size="lg"
+                          className="w-full sm:w-auto cursor-pointer"
+                          onClick={(e) => {
+                            e.preventDefault()
+                            setIsBookDemoOpen(true)
+                          }}
+                        >
                           Yes! I Want to Make More Money
                         </CtaButton>
                       </div>
@@ -120,6 +131,11 @@ export function Reasons() {
           })}
         </div>
       </div>
+
+      <BookADemoModal
+        isOpen={isBookDemoOpen}
+        onClose={() => setIsBookDemoOpen(false)}
+      />
     </section>
   )
 }

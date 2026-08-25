@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import { CtaButton } from '@/components/cta-button'
 import { Reveal } from '@/components/reveal'
 import { Navbar } from '@/components/navbar'
 import { CountUp } from '@/components/count-up'
+import { BookADemoModal } from '@/components/book-a-demo-modal'
 
 export function Hero() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
+
   return (
     <section className="bg-cream">
       {/* Header Bar */}
@@ -21,7 +25,14 @@ export function Hero() {
             Immediately increase customer LTV by adding premium, customized membership storefronts.
           </p>
           <div className="mt-7 sm:mt-8 md:mt-10 w-full sm:w-auto">
-            <CtaButton size="lg" className="w-full sm:w-auto font-bold text-center">
+            <CtaButton
+              size="lg"
+              className="w-full sm:w-auto font-bold text-center cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault()
+                setIsBookDemoOpen(true)
+              }}
+            >
               Book a Demo
             </CtaButton>
           </div>
@@ -49,6 +60,11 @@ export function Hero() {
           </div>
         </Reveal>
       </div>
+
+      <BookADemoModal
+        isOpen={isBookDemoOpen}
+        onClose={() => setIsBookDemoOpen(false)}
+      />
     </section>
   )
 }

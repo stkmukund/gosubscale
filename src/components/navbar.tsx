@@ -9,11 +9,6 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
 
-  const handleBookDemo = (e: React.MouseEvent) => {
-    e.preventDefault()
-    setIsBookDemoOpen(true)
-  }
-
   return (
     <header className="sticky top-0 z-40 w-full bg-cream/95 backdrop-blur border-b border-black">
       <div className="mx-auto flex max-w-7xl items-stretch justify-between">
@@ -47,10 +42,11 @@ export function Navbar() {
           {/* Desktop navigation - visible at > 1400px */}
           <Link
             to="/blogs"
-            className={`hidden min-[1401px]:flex items-center border-b-4 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${page === 'blogs' || page === 'blog-detail'
+            className={`hidden min-[1401px]:flex items-center border-b-4 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
+              page === 'blogs' || page === 'blog-detail'
                 ? 'text-brand border-brand'
                 : 'text-ink border-transparent hover:text-brand hover:border-brand'
-              }`}
+            }`}
           >
             BLOGS
           </Link>
@@ -58,13 +54,14 @@ export function Navbar() {
 
         {/* Right side buttons */}
         <div className="flex items-stretch shrink-0">
-          <a
-            href="#book-a-demo"
-            onClick={handleBookDemo}
-            className="flex items-center border-l border-black bg-black px-3.5 py-2.5 sm:px-8 md:px-10 sm:py-3 font-display text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-white hover:bg-ink/90 transition-colors whitespace-nowrap"
+          <button
+            type="button"
+            id="bookademo1"
+            onClick={() => setIsBookDemoOpen(true)}
+            className="flex items-center border-l border-black bg-black px-3.5 py-2.5 sm:px-8 md:px-10 sm:py-3 font-display text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider text-white hover:bg-ink/90 transition-colors whitespace-nowrap cursor-pointer"
           >
             BOOK A DEMO
-          </a>
+          </button>
         </div>
       </div>
 
@@ -81,16 +78,20 @@ export function Navbar() {
           <Link
             to="/blogs"
             onClick={() => setMobileMenuOpen(false)}
-            className={`block py-2.5 font-display text-sm font-bold tracking-wider transition-colors ${page === 'blogs' || page === 'blog-detail' ? 'text-brand' : 'text-ink hover:text-brand'
-              }`}
+            className={`block py-2.5 font-display text-sm font-bold tracking-wider transition-colors ${
+              page === 'blogs' || page === 'blog-detail' ? 'text-brand' : 'text-ink hover:text-brand'
+            }`}
           >
             BLOGS
           </Link>
-
         </div>
       )}
 
-      <BookADemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} />
+      {/* Booking Form Modal */}
+      <BookADemoModal
+        isOpen={isBookDemoOpen}
+        onClose={() => setIsBookDemoOpen(false)}
+      />
     </header>
   )
 }

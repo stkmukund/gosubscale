@@ -8,6 +8,7 @@ type CtaButtonProps = {
   variant?: 'brand' | 'dark'
   size?: 'md' | 'lg'
   className?: string
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 export function CtaButton({
@@ -16,10 +17,12 @@ export function CtaButton({
   variant = 'brand',
   size = 'md',
   className,
+  onClick,
 }: CtaButtonProps) {
   return (
     <a
       href={href}
+      onClick={onClick}
       className={cn(
         'group inline-flex items-center justify-center gap-2 rounded-full font-display font-semibold uppercase tracking-wide text-center max-w-full leading-snug transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
         variant === 'brand'

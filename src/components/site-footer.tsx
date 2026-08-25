@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { SubScaleLogo } from '@/components/subscale-logo'
 import { Link } from '@/lib/router'
 import { BookADemoModal } from '@/components/book-a-demo-modal'
+import { IconLinkedIn, IconInstagram } from '@/components/icons'
 
 export function SiteFooter() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
@@ -10,17 +11,38 @@ export function SiteFooter() {
     <footer className="bg-black px-5 py-12 sm:px-6 md:px-8 sm:py-14">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 sm:gap-10 sm:pb-12 md:grid-cols-3">
-          {/* Column 1: Brand */}
-          <div className="space-y-3 sm:space-y-4">
+          {/* Column 1: Brand & Address & Social */}
+          <div className="space-y-4">
             <Link to="/" aria-label="SubScale Home" className="inline-block transition-opacity hover:opacity-80">
               <SubScaleLogo variant="footer" />
             </Link>
-            <p className="text-sm leading-relaxed text-white">
-              Subscriptions That Scale Your Bottom Line.
-            </p>
-            <p className="text-xs text-white">
-              Guaranteed performance-based revenue growth for e-commerce brands.
-            </p>
+            <address className="not-italic text-sm leading-relaxed text-white space-y-0.5">
+              <p>SubScale Partners LLC</p>
+              <p>8 The Green, No 26268</p>
+              <p>Dover, DE 19901</p>
+            </address>
+            <div className="flex items-center gap-4 pt-1">
+              <a
+                href="https://www.linkedin.com/company/gosubscale/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SubScale on LinkedIn"
+                className="flex size-11 items-center justify-center -m-2.5 p-2.5 text-white transition-colors hover:text-brand focus-visible:outline-2 focus-visible:outline-brand"
+              >
+                <IconLinkedIn size={24} className="size-6 text-current" />
+                <span className="sr-only">SubScale on LinkedIn</span>
+              </a>
+              <a
+                href="https://www.instagram.com/gosubscale/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SubScale on Instagram"
+                className="flex size-11 items-center justify-center -m-2.5 p-2.5 text-white transition-colors hover:text-brand focus-visible:outline-2 focus-visible:outline-brand"
+              >
+                <IconInstagram size={24} className="size-6 text-current" />
+                <span className="sr-only">SubScale on Instagram</span>
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Navigation */}

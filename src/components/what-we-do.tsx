@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import { CtaButton } from '@/components/cta-button'
 import { Reveal } from '@/components/reveal'
+import { BookADemoModal } from '@/components/book-a-demo-modal'
 
 export function WhatWeDo() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
+
   return (
     <section className="bg-ink py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8">
@@ -41,13 +45,25 @@ export function WhatWeDo() {
               It&rsquo;s like steroids for your business.
             </p>
             <div className="mt-6 sm:mt-8 w-full sm:w-auto">
-              <CtaButton size="lg" className="w-full sm:w-auto">
+              <CtaButton
+                size="lg"
+                className="w-full sm:w-auto cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsBookDemoOpen(true)
+                }}
+              >
                 Yes! I Want to Make More Money
               </CtaButton>
             </div>
           </Reveal>
         </div>
       </div>
+
+      <BookADemoModal
+        isOpen={isBookDemoOpen}
+        onClose={() => setIsBookDemoOpen(false)}
+      />
     </section>
   )
 }

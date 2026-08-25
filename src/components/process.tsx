@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { IconCheck } from '@/components/icons'
 import { CtaButton } from '@/components/cta-button'
 import { Reveal } from '@/components/reveal'
+import { BookADemoModal } from '@/components/book-a-demo-modal'
 
 const STEPS = [
   { label: 'Week 1', text: 'In-depth audit of your business & onboarding' },
@@ -11,6 +13,8 @@ const STEPS = [
 ]
 
 export function Process() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
+
   return (
     <section className="bg-ink py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8">
@@ -38,11 +42,23 @@ export function Process() {
         </ol>
 
         <Reveal className="mt-8 sm:mt-10 flex justify-center w-full">
-          <CtaButton size="lg" className="w-full sm:w-auto">
+          <CtaButton
+            size="lg"
+            className="w-full sm:w-auto cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault()
+              setIsBookDemoOpen(true)
+            }}
+          >
             Yes! I Want to Make More Money
           </CtaButton>
         </Reveal>
       </div>
+
+      <BookADemoModal
+        isOpen={isBookDemoOpen}
+        onClose={() => setIsBookDemoOpen(false)}
+      />
     </section>
   )
 }
