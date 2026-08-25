@@ -92,7 +92,7 @@ export function SiteFooter() {
 
         {/* Bottom Bar */}
         <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-3 text-[10px] sm:text-xs text-white text-center sm:flex-row sm:text-left">
-          <p>&copy; Copyright {new Date().getFullYear()} SubScale Partners LLC. All rights reserved.&trade;</p>
+          <p>&copy; Copyright {new Date().getFullYear()} SubScale Partners LLC. All rights reserved.</p>
           {/* <p>All Rights Reserved</p> */}
           {/* <a href="#" className="transition-colors text-white hover:text-brand">
             Back to Top &uarr;
