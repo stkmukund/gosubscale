@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { getAllBlogs, getCategories, type BlogPost } from '@/lib/blogs'
 import { Link } from '@/lib/router'
-import { IconArrowRight, IconSliders, IconChevronDown, IconGrid, IconList } from '@/components/icons'
+import { IconArrowRight, IconSliders, IconChevronDown, IconCheck, IconGrid, IconList } from '@/components/icons'
 import { Reveal } from '@/components/reveal'
 import { FinalCta } from '@/components/final-cta'
 import { SiteFooter } from '@/components/site-footer'
@@ -45,24 +45,11 @@ export function BlogPage() {
         <section className="px-5 sm:px-6 md:px-8 max-w-7xl mx-auto w-full pb-12 sm:pb-16">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
             {/* Category Dropdown */}
-            <div className="relative w-full sm:w-72">
-              <select
-                id="blogCategorySelect"
-                aria-label="Filter by Category"
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full appearance-none rounded-lg border border-black/20 bg-white px-4 py-2.5 pr-10 text-sm font-medium text-ink shadow-xs transition-colors hover:border-black/40 focus:border-brand focus:outline-hidden focus:ring-2 focus:ring-brand/20 cursor-pointer"
-              >
-                {categories.map((cat) => (
-                  <option key={cat} value={cat}>
-                    {cat}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-black/50">
-                <IconChevronDown className="size-4" />
-              </div>
-            </div>
+            <CategoryDropdown
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onSelectCategory={setSelectedCategory}
+            />
 
             {/* View Toggle */}
             <div className="hidden sm:flex items-center justify-end">
@@ -208,3 +195,90 @@ function BlogListRow({ blog }: { blog: BlogPost }) {
     </article>
   )
 }
+
+function CategoryDropdown({
+  categories,
+  selectedCategory,
+  onSelectCategory,
+}: {
+  categories: string[]
+  selectedCategory: string
+  onSelectCategory: (category: string) => void
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  return (
+    <div ref={dropdownRef} className="relative w-full sm:w-72">
+      <button
+        type="button"
+        id="blogCategorySelect"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-label="Filter by Category"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="w-full flex items-center justify-between rounded-lg border border-black/20 bg-white px-4 py-2.5 text-sm font-medium text-ink shadow-xs transition-colors hover:border-black/40 focus:border-brand focus:outline-hidden focus:ring-2 focus:ring-brand/20 cursor-pointer"
+      >
+        <span className="truncate">{selectedCategory}</span>
+        <IconChevronDown
+          className={`size-4 text-black/50 transition-transform duration-200 shrink-0 ${
+            isOpen ? 'rotate-180 text-brand' : ''
+          }`}
+        />
+      </button>
+
+      {isOpen && (
+        <ul
+          role="listbox"
+          aria-labelledby="blogCategorySelect"
+          className="absolute left-0 right-0 z-30 mt-1.5 max-h-60 overflow-auto rounded-lg border border-black/15 bg-white py-1 shadow-lg focus:outline-hidden"
+        >
+          {categories.map((cat) => {
+            const isSelected = cat === selectedCategory
+            return (
+              <li
+                key={cat}
+                role="option"
+                aria-selected={isSelected}
+                onClick={() => {
+                  onSelectCategory(cat)
+                  setIsOpen(false)
+                }}
+                className={`flex cursor-pointer items-center justify-between px-4 py-2.5 text-sm font-medium transition-colors ${
+                  isSelected
+                    ? 'bg-brand text-white font-semibold'
+                    : 'text-ink hover:bg-cream hover:text-brand'
+                }`}
+              >
+                <span>{cat}</span>
+                {isSelected && (
+                  <IconCheck className="size-4 shrink-0 text-white" strokeWidth={2.5} />
+                )}
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
+  )
+}
+
