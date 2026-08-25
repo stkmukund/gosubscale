@@ -8,7 +8,7 @@ export function SiteFooter() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
 
   return (
-    <footer className="bg-black px-5 py-12 sm:px-6 md:px-8 sm:py-14">
+    <footer className="bg-black px-5 py-12 sm:px-6 md:px-8 sm:py-10">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 sm:gap-10 sm:pb-12 md:grid-cols-3">
           {/* Column 1: Brand & Address & Social */}
@@ -21,6 +21,7 @@ export function SiteFooter() {
               <p>8 The Green, No 26268</p>
               <p>Dover, DE 19901</p>
             </address>
+            <p className='font-display font-semibold uppercase tracking-wider text-white pt-1'>Follow Us</p>
             <div className="flex items-center gap-4 pt-1">
               <a
                 href="https://www.linkedin.com/company/gosubscale/"
@@ -51,9 +52,9 @@ export function SiteFooter() {
               Navigation
             </p>
             <nav className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white" aria-label="Footer Navigation">
-              <Link to="/" className="transition-colors hover:text-brand">
+              {/* <Link to="/" className="transition-colors hover:text-brand">
                 Home
-              </Link>
+              </Link> */}
               <Link to="/blogs" className="transition-colors text-white hover:text-brand">
                 Blogs
               </Link>
@@ -74,13 +75,13 @@ export function SiteFooter() {
             </p>
             <div className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white">
               <a
-                href="mailto:partnerships@gosubscale.com"
+                href="/"
                 className="transition-colors hover:text-brand break-all sm:break-normal"
               >
                 Privacy Policy
               </a>
               <a
-                href=""
+                href="/"
                 className="transition-colors hover:text-brand break-all sm:break-normal"
               >
                Terms of Service
@@ -90,12 +91,12 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 sm:mt-8 flex flex-col items-center justify-between gap-3 text-xs text-white text-center sm:flex-row sm:text-left">
+        <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-3 text-[10px] sm:text-xs text-white text-center sm:flex-row sm:text-left">
           <p>&copy; Copyright {new Date().getFullYear()} SubScale Partners LLC. All rights reserved.&trade;</p>
           {/* <p>All Rights Reserved</p> */}
-          <a href="#" className="transition-colors text-white hover:text-brand">
+          {/* <a href="#" className="transition-colors text-white hover:text-brand">
             Back to Top &uarr;
-          </a>
+          </a> */}
         </div>
       </div>
 
