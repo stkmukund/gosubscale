@@ -2,28 +2,16 @@ import { useState } from 'react'
 import { SubScaleLogo } from '@/components/subscale-logo'
 import { Link, useRouter } from '@/lib/router'
 import { IconX } from '@/components/icons'
+import { BookADemoModal } from '@/components/book-a-demo-modal'
 
 export function Navbar() {
-  const { page, navigate } = useRouter()
+  const { page } = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
 
   const handleBookDemo = (e: React.MouseEvent) => {
     e.preventDefault()
-    if (page === 'home') {
-      const el = document.getElementById('book-a-demo')
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-        return
-      }
-    }
-    // Navigate home with book demo anchor or open external
-    navigate('/#book-a-demo')
-    setTimeout(() => {
-      const el = document.getElementById('book-a-demo')
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 100)
+    setIsBookDemoOpen(true)
   }
 
   return (
@@ -59,11 +47,10 @@ export function Navbar() {
           {/* Desktop navigation - visible at > 1400px */}
           <Link
             to="/blogs"
-            className={`hidden min-[1401px]:flex items-center border-b-4 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${
-              page === 'blogs' || page === 'blog-detail'
+            className={`hidden min-[1401px]:flex items-center border-b-4 -mb-px px-5 md:px-8 font-display text-xs md:text-sm font-bold uppercase tracking-wider transition-colors shrink-0 ${page === 'blogs' || page === 'blog-detail'
                 ? 'text-brand border-brand'
                 : 'text-ink border-transparent hover:text-brand hover:border-brand'
-            }`}
+              }`}
           >
             BLOGS
           </Link>
@@ -94,15 +81,16 @@ export function Navbar() {
           <Link
             to="/blogs"
             onClick={() => setMobileMenuOpen(false)}
-            className={`block py-2.5 font-display text-sm font-bold tracking-wider transition-colors ${
-              page === 'blogs' || page === 'blog-detail' ? 'text-brand' : 'text-ink hover:text-brand'
-            }`}
+            className={`block py-2.5 font-display text-sm font-bold tracking-wider transition-colors ${page === 'blogs' || page === 'blog-detail' ? 'text-brand' : 'text-ink hover:text-brand'
+              }`}
           >
             BLOGS
           </Link>
-        
+
         </div>
       )}
+
+      <BookADemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} />
     </header>
   )
 }

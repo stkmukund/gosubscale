@@ -1,6 +1,7 @@
 import { CtaButton } from '@/components/cta-button'
 import { Reveal } from '@/components/reveal'
 import { Navbar } from '@/components/navbar'
+import { CountUp } from '@/components/count-up'
 
 export function Hero() {
   return (
@@ -27,7 +28,11 @@ export function Hero() {
           <div className="mt-7 sm:mt-8 md:mt-10 w-full max-w-lg border-y border-black py-3.5 sm:py-4.5">
             <p className="font-display text-sm sm:text-base md:text-lg lg:text-xl font-medium text-ink flex flex-wrap items-center justify-between sm:justify-start gap-x-2 gap-y-1">
               <span>2025 Gross Merchandise Value:</span>
-              <span className="font-bold text-brand whitespace-nowrap">$75,883,885.79</span>
+              <CountUp
+                end={75883885.79}
+                duration={2200}
+                className="font-bold text-brand whitespace-nowrap"
+              />
             </p>
           </div>
         </Reveal>

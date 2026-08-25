@@ -125,7 +125,7 @@ function BlogCard({ blog }: { blog: BlogPost }) {
   const detailUrl = `/blogs/${blog.slug}`
 
   return (
-    <article className="flex h-full flex-col justify-between rounded-xl border border-black/10 bg-white p-5 sm:p-7 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+    <article className="flex h-full flex-col justify-between border border-black/10 bg-white p-5 sm:p-7 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div>
         {/* Category Badge */}
         <div className="mb-3">
@@ -150,7 +150,7 @@ function BlogCard({ blog }: { blog: BlogPost }) {
         </h2>
 
         {/* Excerpt */}
-        <p className="mt-3 text-sm leading-relaxed text-black/75 line-clamp-4">
+        <p className="mt-3 text-sm sm:text-base leading-relaxed text-black/75 line-clamp-4">
           {blog.excerpt}
         </p>
       </div>
@@ -159,10 +159,10 @@ function BlogCard({ blog }: { blog: BlogPost }) {
       <div className="mt-5 sm:mt-6 pt-2">
         <Link
           to={detailUrl}
-          className="flex w-full items-center justify-center gap-2 rounded-md bg-brand px-5 py-2.5 sm:py-3 font-display text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-xs transition-all hover:bg-brand/90 active:scale-[0.99]"
+          className="flex w-full items-center justify-center gap-2 bg-brand px-5 py-2.5 sm:py-3 font-display text-xs sm:text-sm font-medium uppercase tracking-[3px] text-white shadow-xs transition-all hover:bg-brand/90 active:scale-[0.99]"
         >
           <span>READ BLOG</span>
-          <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          <IconArrowRight className="size-6 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
     </article>

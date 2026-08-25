@@ -42,58 +42,80 @@ const REASONS = [
 
 export function Reasons() {
   return (
-    <section className="bg-cream py-14 sm:py-16 md:py-20">
-      <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-8">
+    <section className="bg-cream py-14 sm:py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         <Reveal>
-          <h2 className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-ink text-balance">
+          <h2 className="text-center font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-tight tracking-tight text-ink text-balance">
             5 Reasons to Work
             <br className="hidden sm:block" /> with SubScale&trade;
           </h2>
         </Reveal>
 
-        <div className="mt-12 sm:mt-16 flex flex-col gap-12 sm:gap-16 md:gap-20 lg:gap-24">
+        <div className="mt-12 sm:mt-16 md:mt-20 flex flex-col gap-12 sm:gap-16 md:gap-20">
           {REASONS.map((reason, i) => {
             const reversed = i % 2 === 1
             return (
-              <Reveal key={reason.n}>
-                <div
-                  className={cn(
-                    'grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16',
-                  )}
-                >
+              <div key={reason.n} className="flex flex-col">
+                <Reveal>
                   <div
                     className={cn(
-                      'relative flex justify-center',
-                      reversed ? 'md:order-1' : 'md:order-2',
+                      'grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16',
                     )}
                   >
-                    <div className="absolute -bottom-4 -right-2 -z-0 size-32 sm:size-40 rounded-full" />
-                    <img
-                      src={reason.image || '/placeholder.svg'}
-                      alt={reason.alt}
-                      width={640}
-                      height={460}
-                      loading="lazy"
-                      className="relative z-10 h-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[400px]"
-                    />
-                  </div>
+                    {/* Text Content */}
+                    <div
+                      className={cn(
+                        'flex flex-col items-start',
+                        reversed ? 'md:order-2' : 'md:order-1',
+                      )}
+                    >
+                      <div className="flex size-14 sm:size-16 md:size-[68px] items-center justify-center rounded-full border border-ink font-display text-2xl sm:text-3xl font-bold text-ink mb-4 sm:mb-5">
+                        {reason.n}
+                      </div>
+                      <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold leading-[1.15] tracking-tight text-ink">
+                        {reason.title}
+                      </h3>
+                      <p className="mt-4 sm:mt-5 max-w-lg font-arial font-normal text-base sm:text-lg lg:text-[22px] leading-relaxed text-ink">
+                        {reason.body}
+                      </p>
+                      <div className="mt-6 sm:mt-8 w-full sm:w-auto">
+                        <CtaButton size="lg" className="w-full sm:w-auto">
+                          Yes! I Want to Make More Money
+                        </CtaButton>
+                      </div>
+                    </div>
 
-                  <div className={cn(reversed ? 'md:order-2' : 'md:order-1')}>
-                    <span className="flex size-10 sm:size-12 items-center justify-center rounded-full border-2 border-ink font-display text-lg sm:text-xl font-bold text-ink">
-                      {reason.n}
-                    </span>
-                    <h3 className="mt-4 sm:mt-5 font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight text-ink text-balance">
-                      {reason.title}
-                    </h3>
-                    <p className="mt-3 sm:mt-4 max-w-md text-sm sm:text-base md:text-lg leading-relaxed text-black/85">
-                      {reason.body}
-                    </p>
-                    <div className="mt-6 sm:mt-7 w-full sm:w-auto">
-                      <CtaButton className="w-full sm:w-auto">Yes! I Want to Make More Money</CtaButton>
+                    {/* Image with Brand Accent Circle */}
+                    <div
+                      className={cn(
+                        'relative flex items-center justify-center py-4',
+                        reversed ? 'md:order-1' : 'md:order-2',
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          'absolute -z-0 size-44 sm:size-56 md:size-64 lg:size-72',
+                          reversed
+                            ? '-bottom-2 -left-2 sm:-bottom-4 sm:-left-4 lg:-bottom-6 lg:-left-6'
+                            : '-bottom-2 -right-2 sm:-bottom-4 sm:-right-4 lg:-bottom-6 lg:-right-6',
+                        )}
+                      />
+                      <img
+                        src={reason.image || '/placeholder.svg'}
+                        alt={reason.alt}
+                        width={640}
+                        height={460}
+                        loading="lazy"
+                        className="relative z-10 h-auto w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[480px] object-contain"
+                      />
                     </div>
                   </div>
-                </div>
-              </Reveal>
+                </Reveal>
+
+                {i < REASONS.length - 1 && (
+                  <hr className="mt-12 sm:mt-16 md:mt-20 border-t border-ink/15" />
+                )}
+              </div>
             )
           })}
         </div>
