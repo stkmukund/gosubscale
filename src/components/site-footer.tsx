@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { SubScaleLogo } from '@/components/subscale-logo'
 import { Link } from '@/lib/router'
 import { BookADemoModal } from '@/components/book-a-demo-modal'
+import { PrivacyPolicyModal } from '@/components/privacy-policy-modal'
 import { IconLinkedIn, IconInstagram } from '@/components/icons'
 
 export function SiteFooter() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false)
 
   return (
     <footer className="bg-black px-5 py-12 sm:px-6 md:px-8 sm:py-10">
@@ -74,12 +76,13 @@ export function SiteFooter() {
               Subscale™
             </p>
             <div className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white">
-              <a
-                href="/"
-                className="transition-colors hover:text-brand break-all sm:break-normal"
+              <button
+                type="button"
+                onClick={() => setIsPrivacyPolicyOpen(true)}
+                className="text-left transition-colors hover:text-brand break-all sm:break-normal cursor-pointer"
               >
                 Privacy Policy
-              </a>
+              </button>
               <a
                 href="/"
                 className="transition-colors hover:text-brand break-all sm:break-normal"
@@ -101,6 +104,7 @@ export function SiteFooter() {
       </div>
 
       <BookADemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} />
+      <PrivacyPolicyModal isOpen={isPrivacyPolicyOpen} onClose={() => setIsPrivacyPolicyOpen(false)} />
     </footer>
   )
 }
