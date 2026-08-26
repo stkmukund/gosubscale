@@ -3,7 +3,7 @@ import { SubScaleLogo } from '@/components/subscale-logo'
 import { Link } from '@/lib/router'
 import { BookADemoModal } from '@/components/book-a-demo-modal'
 import { PrivacyPolicyModal } from '@/components/privacy-policy-modal'
-import { IconLinkedIn, IconInstagram } from '@/components/icons'
+import { IconLinkedIn, IconInstagram, IconArrowUpRight } from '@/components/icons'
 
 export function SiteFooter() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
@@ -53,7 +53,7 @@ export function SiteFooter() {
             <p className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Navigation
             </p>
-            <nav className="mt-3 sm:mt-4 flex flex-col gap-2 text-sm text-white" aria-label="Footer Navigation">
+            <nav className="mt-3 sm:mt-4 flex flex-col items-start gap-2.5 text-sm text-white" aria-label="Footer Navigation">
               {/* <Link to="/" className="transition-colors hover:text-brand">
                 Home
               </Link> */}
@@ -63,9 +63,10 @@ export function SiteFooter() {
               <button
                 type="button"
                 onClick={() => setIsBookDemoOpen(true)}
-                className="text-left transition-colors text-white hover:text-brand cursor-pointer"
+                className="group mt-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand px-4 py-2 font-display text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-brand/90 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer focus-visible:outline-2 focus-visible:outline-brand"
               >
-                Book A Demo
+                <span>Book A Demo</span>
+                <IconArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
             </nav>
           </div>
