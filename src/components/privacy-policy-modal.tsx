@@ -177,9 +177,9 @@ export function PrivacyPolicyModal({
               <strong>Online Privacy Policy Only</strong> This policy applies to information collected online through our website, not offline.
             </p>
 
-            <p>
+            {/* <p>
               <strong>Terms of Service</strong> Please view our Terms of Service for more details on the use of our website and services.
-            </p>
+            </p> */}
 
             <p>
               <strong>Your Consent</strong> By using our site, you consent to our privacy policy.
